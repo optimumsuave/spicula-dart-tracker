@@ -32,7 +32,7 @@ Board.prototype.trashDart = function(){
 		this.turnScore-=parseInt(pts);
 		this.totalScore-=parseInt(pts);
 		$(".hit").last().remove();
-		$(".slice.active").last().removeClass("active");
+		// .removeClass("active");
 		this.dartCount++;
 		this.render();
 	}

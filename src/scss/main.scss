@@ -45,6 +45,70 @@ button:active {
 	color: #333;
 }
 
+button i {
+	color: white;
+}
+
+input {
+	background: transparent;
+	color: white;
+	border: 2px #eee solid;
+	border-radius: 6px;
+	padding: 10px 20px;
+	font-size: 1.2em;
+	outline: none; 
+	float: left;
+	font-family: 'Montserrat', sans-serif;	
+}
+.player-list {
+	max-width: 300px;	
+	margin: 0 auto;
+}
+.player-list input{
+	max-width: 180px;
+}
+.player-list button{
+	float: right;
+	margin: 0 5px;
+	border: 0;
+	z-index: 500;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 2em;
+	color: #666;
+	background: #ccc;
+	font-size: 1.2em;
+	box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.2);
+	/*font-size: 2em;*/
+}
+.player-list ol{
+
+}
+
+.player-list li{
+	color: white;
+	font-size: 2em;
+	line-height: 2em;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.player-list li span{
+}
+.player-list li button{
+	display: none;
+}
+
+.player-list li:hover button{
+	display: block;
+	border: 0;
+	font-size: 1.2em;
+}
+
+
+
 .wrap {
 	margin: 0 auto;
 	max-width: 500px;
