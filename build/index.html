@@ -1,0 +1,88 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Darts</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<li>Dart Board</li>
+			<li>Stats</li>
+		</ul>
+		<i class="fa fa-bars"></i>
+		<i class="fa fa-close"></i>
+		<span class="fa-close-label">CLOSE</span>
+	</nav>
+	<div class="splash">
+		<h1>Spicula</h1>
+		<svg class="dart spinning" viewBox="0 0 40 100">
+			<g transform="translate(20 	0)">
+			<path transform="scale(0.078) rotate(45)" d="M695 917 c-40 -40 -55 -89 -55 -179 l0 -66 -187 -169 c-291 -261
+				-293 -263 -293 -291 0 -16 -17 -43 -50 -78 -69 -73 -63 -91 8 -21 46 46 61 55
+				81 50 26 -7 24 -9 302 302 l153 170 83 7 c126 10 188 46 206 120 11 42 -7 75
+				-47 88 -28 9 -40 21 -55 56 -19 43 -21 44 -66 44 -40 0 -52 -5 -80 -33z"/>
+			</g>
+		</svg>
+		<br/>
+		<button class="new-game">New Game</button>
+	</div>
+	<div class="banner">
+		
+	</div>
+	<div class="board">
+		<div class="darts">
+			<svg class="dart" viewBox="0 0 40 100">
+				<g transform="translate(20 	0)">
+				<path transform="scale(0.078) rotate(45)" d="M695 917 c-40 -40 -55 -89 -55 -179 l0 -66 -187 -169 c-291 -261
+					-293 -263 -293 -291 0 -16 -17 -43 -50 -78 -69 -73 -63 -91 8 -21 46 46 61 55
+					81 50 26 -7 24 -9 302 302 l153 170 83 7 c126 10 188 46 206 120 11 42 -7 75
+					-47 88 -28 9 -40 21 -55 56 -19 43 -21 44 -66 44 -40 0 -52 -5 -80 -33z"/>
+				</g>
+			</svg>
+			<svg class="dart" viewBox="0 0 40 100">
+				<g transform="translate(20 	0)">
+				<path transform="scale(0.078) rotate(45)" d="M695 917 c-40 -40 -55 -89 -55 -179 l0 -66 -187 -169 c-291 -261
+					-293 -263 -293 -291 0 -16 -17 -43 -50 -78 -69 -73 -63 -91 8 -21 46 46 61 55
+					81 50 26 -7 24 -9 302 302 l153 170 83 7 c126 10 188 46 206 120 11 42 -7 75
+					-47 88 -28 9 -40 21 -55 56 -19 43 -21 44 -66 44 -40 0 -52 -5 -80 -33z"/>
+				</g>
+			</svg>
+			<svg class="dart" viewBox="0 0 40 100">
+				<g transform="translate(20 	0)">
+				<path transform="scale(0.078) rotate(45)" d="M695 917 c-40 -40 -55 -89 -55 -179 l0 -66 -187 -169 c-291 -261
+					-293 -263 -293 -291 0 -16 -17 -43 -50 -78 -69 -73 -63 -91 8 -21 46 46 61 55
+					81 50 26 -7 24 -9 302 302 l153 170 83 7 c126 10 188 46 206 120 11 42 -7 75
+					-47 88 -28 9 -40 21 -55 56 -19 43 -21 44 -66 44 -40 0 -52 -5 -80 -33z"/>
+				</g>
+			</svg>
+		</div>
+		<div class="board-trash-dart board-btn"><i class="fa fa-trash-o"></i></div> 
+		<div class="board-next-turn board-btn"><i class="fa fa-arrow-right"></i></div> 
+		<svg width="320" height="320" id="app">
+			<filter id="css_grayscale">
+				<feColorMatrix type="saturate" values="0"/>
+			</filter>
+		</svg>
+		</div>
+	<div class="scoring">
+		<div class="turn-player score-box-2">
+			<span>player</span>
+			<h2></h2>
+		</div>
+		<div class="turn-score score-box-1">
+			<span>turn score</span>
+			<h2></h2>
+		</div>
+		<div class="total-score score-box-1">
+			<span>total</span>
+			<h2></h2>
+		</div>
+	</div>
+	<script type="text/javascript" src="bundle.js"></script>
+</body>
