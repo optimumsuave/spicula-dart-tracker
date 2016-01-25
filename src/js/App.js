@@ -14,7 +14,7 @@ $(document).ready(function(){
 		$(".splash .player-list").fadeIn();
 		var nameList = $("<ol></ol>");
 		nameList.appendTo($(".player-list"));
-		var addBtn = $("<button><i class='fa fa-plus'></i></button>");
+		var addBtn = $("<button class='btn-round'><i class='fa fa-plus'></i></button>");
 		addBtn.appendTo($(".player-list"));
 		var addName = $("<input class='add-name' autocomplete='off' placeholder='Player' />");
 		addName.appendTo($(".player-list"));
@@ -23,12 +23,22 @@ $(document).ready(function(){
 		addBtn.click(function(){
 			var li = $("<li><span>"+addName.val()+"</span></li>");
 			addName.val("");
-			var del = $("<button><i class='fa fa-close'></i></button>");
+			var del = $("<button class='btn-remove'><i class='fa fa-close'></i></button>");
 			del.appendTo(li);
 			li.appendTo(nameList);
 			addName.focus();
 		});
+		$("<hr/>").appendTo($(".player-list"));
+
+		var startBtn = $("<button class='begin'>BEGIN</button>");
+		startBtn.appendTo($(".player-list"));
+		startBtn.click(function(){
+			$(".splash").hide();
+			$(".darts").fadeIn();
+			$("#app").css("display", "block");
+			var myBoard = new Board();
+		});
 	});
 
-	myPlayers = new Players();
+	// myPlayers = new Players();
 });
