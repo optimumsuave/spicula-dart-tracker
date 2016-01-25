@@ -215,7 +215,6 @@ svg.dart.spinning {
 	-webkit-animation: spin 1s linear infinite;
 	animation: spin 1s linear infinite;
 	margin: 30px 0;
-	width: 50%;
 	height: 200px;
 }
 svg.dart path {
@@ -235,19 +234,21 @@ svg.dart.active path {
 }
 
 svg#app {
-	padding: 20px 0;
+	padding-top: 72px;
+	padding-bottom: 40px;
 	width: 100%;
 	max-width: 320px;
 	margin: 0 auto;
 	display: none;
-}
-
-svg#app.active {
 	-webkit-animation: intro 2s ease-out;
 	animation: intro 2s ease-out;
 	-webkit-backface-visibility: visible;  /* Chrome, Safari, Opera */
     backface-visibility: visible;
     transform-style: preserve-3d;
+}
+
+svg#app.active {
+	
 }
 
 @-webkit-keyframes spin { 

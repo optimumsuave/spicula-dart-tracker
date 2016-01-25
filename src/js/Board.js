@@ -72,7 +72,7 @@ Board.prototype.throwDart = function(e){
 	}
 	if(this.dartCount) {
 		var w = ($(window).width()-this.$svg.width())/2;
-		var h = 60;
+		var h = 72;
 		var hit = makeSVG('circle', {
 			class:'hit', 
 			'data-score': parseInt($(e.target).attr('data-score')), 
@@ -115,7 +115,7 @@ Board.prototype.render = function(){
 
 	$(".dart").removeClass("active");
 	for(var i=4;i>this.dartCount;i--){
-		$(".dart").eq(i-1).addClass("active");		
+		$(".dart").eq(i).addClass("active");		
 	}
 }
 
