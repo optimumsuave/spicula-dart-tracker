@@ -1,20 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Playball);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
 body {
 	background: white;
 	font-size: 16px;
 	margin: 0;
-	background: #444;
+	background: #222 url(assets/simple_dashed.png);
 	font-family: 'Montserrat', sans-serif;
 }
 a, button {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+.clearfix {
+	clear: both;
+}
 h1 {
 	color: white;
-	font-size: 3em;
-	font-family: 'Playball', sans-serif;
-	padding-top: 5px;
+	font-size: 2em;
+	font-family: 'Dancing Script', sans-serif;
+	padding-top: 10px;
 	padding-left: 10px;
 	margin-top: 0;
 	text-align: left;
@@ -130,11 +134,10 @@ input {
 	
 }
 
-
-
 .wrap {
 	margin: 0 auto;
-	max-width: 500px;
+	max-width: 800px;
+	padding: 0 20px;
 }
 
 .splash {
@@ -220,16 +223,23 @@ nav ul li{
 	min-height: 100px;
 	background: #555;
 	color: white;
+	box-shadow: 0px 5px 20px 10px rgba(0,0,0,0.1);
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.scoring-header {
+	color: #333;
 }
 
 .score-box-1 {
-	width: 20%;
+	width: 25%;
 	padding: 0 2.5%;
 	display: inline-block;
 	float: left;
 }
 .score-box-2 {
-	width: 45%;
+	width: 35%;
 	padding: 0 2.5%;
 	display: inline-block;
 	float: left;
@@ -245,16 +255,62 @@ nav ul li{
 	color: #ccc;
 	border-top: 4px #ccc solid;
 	padding-top: 10px;
+	width: 100%;
+    text-align: center;
 }	
 .scoring h2{
-	font-size: 2em;
+	font-size: 1.6em;
 	margin: 0;
+	line-height: 2em;
+}
+
+.player{
+    background: #555;
+    float: left;
+    clear: both;
+    width: 100%;
+    color: #aaa;
+}
+.player.odd {
+	background: #333;
+}
+.player.active{
+	background: #333;
+	color: white;
+	box-shadow: inset 0px 0px 10px 10px rgba(0,0,0,0.1);
+}
+
+.player h2 b{
+	font-size: 0.5em;
+    background: rgba(0,0,0,0.3);
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-top: -5px;
 }
 
 .board {
 	background: #999;
 	position: relative;
 }
+
+.board-buttons {
+	display: none;
+	max-width: 800px;
+	width: 95%;
+	padding: 0 2.5;
+    margin: 0 auto;
+    height: 50px;
+    position: relative;
+    background: none;
+    margin-top: -50px;
+}
+
 
 .board-btn{
 	z-index: 500;
@@ -277,7 +333,7 @@ nav ul li{
 
 .board-trash-dart{
 	display: none;
-	left: 10px;
+	left: 2.5%;
 	bottom: 10px;
 }
 
@@ -302,7 +358,7 @@ svg.dart.spinning {
 	-webkit-animation: spin 1s linear infinite;
 	animation: spin 1s linear infinite;
 	margin: 30px 0;
-	height: 200px;
+	height: 120px;
 }
 svg.dart path {
 	fill: #333;

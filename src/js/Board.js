@@ -4,15 +4,15 @@ import {makeSVG, isEven} 		from 'Utility';
 
 var SCORE_ARRAY = [6, 10, 15, 2, 17, 3, 19, 7, 16, 8, 11, 14, 9, 12, 5, 20, 1, 18, 4, 13];
 
-var Board = function(){
+var Board = function(players){
+	this.players = players;
 	this.$svg = $("#app");
 	this.touchList = [];
 	this.turnScore = 0;
 	this.totalScore = 0;
 	this.$trashBtn = $(".board-trash-dart");
 	this.$trashBtn.click(this.trashDart.bind(this));
-	$(".turn-score h2").html(this.turnScore);
-	$(".total-score h2").html(this.totalScore);
+	this.$nextBtn = $(".board-next-turn");
 	this.dartCount = 3;
 	this.board = this.createBoard();
 	this.createNumbers((this.$svg.width()/2)-10);
@@ -23,14 +23,25 @@ var Board = function(){
 			$(d).fadeIn(100);
 		}, i*10);
 	});
+
+	$(".board-next-turn").click(function(){
+		this.finishTurn();
+	}.bind(this));
 }
 
+Board.prototype.finishTurn = function(){
+	$('.hit').remove();
+	$('.slice.active, svg circle.active').removeClass('active');
+	this.dartCount = 3;
+	this.touchList = [];
+	this.players.finishTurn();
+	this.render();
+}
 Board.prototype.trashDart = function(){
 	if(this.dartCount < 3){
 		var pts = $(".hit").last().attr("data-score");
 		console.log(pts);
-		this.turnScore-=parseInt(pts);
-		this.totalScore-=parseInt(pts);
+		this.players.unScore(parseInt(pts));
 		$(".hit").last().remove();
 		// .removeClass("active");
 		this.dartCount++;
@@ -84,29 +95,20 @@ Board.prototype.throwDart = function(e){
 			stroke: '#ffb200'
 		});
 		this.$svg.append(hit);
-		this.turnScore += parseInt($(e.target).attr('data-score'));
-		this.totalScore += parseInt($(e.target).attr('data-score'));
+		this.players.score(parseInt($(e.target).attr('data-score')));
 		$(e.target).addClass("active");
 		this.dartCount--;
 	}
-	
-	$(".turn-score h2").html(this.turnScore);
-	$(".total-score h2").html(this.totalScore);
-
 	this.render();
-	// this.totalScore += parseInt();
 }
 
 Board.prototype.render = function(){
-	$(".turn-score h2").html(this.turnScore);
-	$(".total-score h2").html(this.totalScore);
-
 	if(this.dartCount < 3){
 		$(".board-trash-dart").fadeIn();
 	} else {
 		$(".board-trash-dart").fadeOut();
 	}
-	if(this.dartCount == 0){
+	if(this.dartCount < 3){
 		$(".board-next-turn").fadeIn();
 	} else {
 		$(".board-next-turn").fadeOut();

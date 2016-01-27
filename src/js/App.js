@@ -19,11 +19,17 @@ $(document).ready(function(){
 		var addName = $("<input class='add-name' autocomplete='off' placeholder='Player' />");
 		addName.appendTo($(".player-list"));
 		addName.focus();
+		var playerList = [];
 		
 		addBtn.click(function(){
 			var li = $("<li><span>"+addName.val()+"</span></li>");
+			playerList.push(addName.val());
 			addName.val("");
 			var del = $("<button class='btn-remove'><i class='fa fa-close'></i></button>");
+			del.click(function(){
+				playerList.pop();
+				$(this).parent().remove();
+			});
 			del.appendTo(li);
 			li.appendTo(nameList);
 			addName.focus();
@@ -34,11 +40,14 @@ $(document).ready(function(){
 		startBtn.appendTo($(".player-list"));
 		startBtn.click(function(){
 			$(".splash").hide();
+			$(".board-buttons").fadeIn();
 			$(".darts").fadeIn();
+			$(".scoring").fadeIn();
 			$("#app").css("display", "block");
-			var myBoard = new Board();
+			var myPlayers = new Players(playerList);
+
+			var myBoard = new Board(myPlayers);
 		});
 	});
 
-	// myPlayers = new Players();
 });
